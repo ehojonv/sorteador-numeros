@@ -3,7 +3,7 @@ function sortear(){
     let numMin = parseInt(document.getElementById("de").value);
     let numMax = parseInt(document.getElementById("ate").value); 
 
-    if (qntdNum > (numMax-numMin) || qntdNum < 1){
+    if (qntdNum > (numMax-numMin)+1 || qntdNum < 1){
         trocarTexto("resultado",`<label class="texto__paragrafo">Impossível sortear com esses parâmetros.</label>`);
     } else {
 
