@@ -3,7 +3,7 @@ function sortear(){
     let numMin = parseInt(document.getElementById("de").value);
     let numMax = parseInt(document.getElementById("ate").value); 
 
-    if (qntdNum>(numMax-numMin)){
+    if (qntdNum > (numMax-numMin) || qntdNum < 1){
         trocarTexto("resultado",`<label class="texto__paragrafo">Impossível sortear com esses parâmetros.</label>`);
     } else {
 
@@ -19,7 +19,7 @@ function sortear(){
      escolhidos.push(numero);
     };
 
-    trocarTexto("resultado",`<label class="texto__paragrafo">Números sorteados:  ${escolhidos}.</label>`);
+    trocarTexto("resultado",`<label class="texto__paragrafo">Números sorteados: ${escolhidos}.</label>`);
     alterarBtn("btn-reiniciar");
     alterarBtn("btn-sortear");
     };
@@ -51,5 +51,5 @@ function reiniciar(){
 };
 
 function gerarNumAleatorio(min, max){
-    return Math.floor(Math.random() * (max-min+1)) + min;
+    return Math.floor(Math.random()*(max-min+1))+min;
 };
