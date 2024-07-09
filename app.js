@@ -4,7 +4,7 @@ function sortear(){
     let numMax = parseInt(document.getElementById("ate").value); 
 
     if (qntdNum>(numMax-numMin)){
-        trocarTexto("resultado",`<label class="texto__paragrafo">Impossível com esses parâmetros.</label>`);
+        trocarTexto("resultado",`<label class="texto__paragrafo">Impossível sortear com esses parâmetros.</label>`);
     } else {
 
     let escolhidos = [];
