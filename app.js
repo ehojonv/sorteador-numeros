@@ -1,3 +1,4 @@
+document.getElementById("btn-reiniciar").disabled = true;
 function sortear(){
     let qntdNum = parseInt(document.getElementById("quantidade").value);
     let numMin = parseInt(document.getElementById("de").value);
@@ -32,9 +33,11 @@ function alterarBtn(tag){
     if (btn.classList.contains("container__botao-desabilitado")){
         btn.classList.remove("container__botao-desabilitado");
         btn.classList.add("container__botao");
+        btn.disabled = false;
     } else {
         btn.classList.remove("container__botao");
         btn.classList.add("container__botao-desabilitado");
+        btn.disabled = true;
     };
 };
 
