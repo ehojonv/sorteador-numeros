@@ -3,8 +3,10 @@ function sortear(){
     let numMin = parseInt(document.getElementById("de").value);
     let numMax = parseInt(document.getElementById("ate").value); 
 
-    if (qntdNum > (numMax-numMin)+1 || qntdNum < 1){
+    if (qntdNum > (numMax-numMin)+1 || qntdNum < 1 || isNaN(qntdNum) || isNaN(numMin) || isNaN(numMax)){
         trocarTexto("resultado",`<label class="texto__paragrafo">Impossível sortear com esses parâmetros.</label>`);
+        alterarBtn("btn-reiniciar");
+        alterarBtn("btn-sortear");
     } else {
 
     let escolhidos = [];
@@ -18,7 +20,7 @@ function sortear(){
      };
      escolhidos.push(numero);
     };
-
+    escolhidos.sort((a,b) => a-b);
     trocarTexto("resultado",`<label class="texto__paragrafo">Números sorteados: ${escolhidos}.</label>`);
     alterarBtn("btn-reiniciar");
     alterarBtn("btn-sortear");
