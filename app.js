@@ -6,8 +6,6 @@ function sortear(){
 
     if (qntdNum > (numMax-numMin)+1 || qntdNum < 1 || isNaN(qntdNum) || isNaN(numMin) || isNaN(numMax)){
         trocarTexto("resultado",`<label class="texto__paragrafo">Impossível sortear com esses parâmetros.</label>`);
-        alterarBtn("btn-reiniciar");
-        alterarBtn("btn-sortear");
     } else {
 
     let escolhidos = [];
