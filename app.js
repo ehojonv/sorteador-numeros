@@ -4,7 +4,9 @@ function sortear(){
     let numMin = parseInt(document.getElementById("de").value);
     let numMax = parseInt(document.getElementById("ate").value); 
 
-    if (qntdNum > (numMax-numMin)+1 || qntdNum < 1 || isNaN(qntdNum) || isNaN(numMin) || isNaN(numMax)){
+    if (isNaN(qntdNum) || isNaN(numMin) || isNaN(numMax)){
+        trocarTexto("resultado",`<label class="texto__paragrafo">Há campos vazios ainda!</label>`);
+    } else if (qntdNum > (numMax-numMin)+1 || qntdNum < 1) {
         trocarTexto("resultado",`<label class="texto__paragrafo">Impossível sortear com esses parâmetros.</label>`);
     } else {
 
@@ -54,5 +56,5 @@ function reiniciar(){
 };
 
 function gerarNumAleatorio(min, max){
-    return Math.floor(Math.random()*(max-min+1))+min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
